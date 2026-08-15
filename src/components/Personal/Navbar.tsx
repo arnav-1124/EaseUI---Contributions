@@ -21,20 +21,20 @@ const Navbar = () => {
           EaseUi
         </h1>
 
-        <div className="hidden sm:flex items-center bg-transparent rounded-md px-3 py-1.5 shadow-xs shadow-gray-300 border border-gray-200">
-          <Search size={18} className="text-gray-500" />
+        <div className="hidden sm:flex items-center bg-background rounded-md px-3 py-1.5 shadow-xs border border-border">
+          <Search size={18} className="text-muted-foreground" />
           <input
             type="text"
             placeholder="Search components"
-            className="ml-2 bg-transparent outline-none text-sm text-gray-700 placeholder-gray-400"
+            className="ml-2 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground"
           />
         </div>
       </div>
 
-      <ul className="hidden md:flex items-center gap-6 text-gray-500">
+      <ul className="hidden md:flex items-center gap-6 text-muted-foreground">
         <li
           onClick={() => navigate("components")}
-          className="cursor-pointer hover:text-black"
+          className="cursor-pointer hover:text-foreground"
         >
           Components
         </li>
@@ -42,7 +42,7 @@ const Navbar = () => {
         <li className="cursor-pointer hover:text-black">Templates</li>
         {mode === "dark" && (
           <li
-            className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="cursor-pointer p-2 rounded-full hover:bg-muted"
             onClick={() => dispatch(toggleTheme())}
           >
             <Sun size={20} className="text-yellow-400" />
@@ -53,13 +53,13 @@ const Navbar = () => {
             className="cursor-pointer p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
             onClick={() => dispatch(toggleTheme())}
           >
-            <Moon size={20} className="text-gray-600 dark:text-gray-400" />
+            <Moon size={20} className="text-muted-foreground" />
           </li>
         )}
       </ul>
 
       {/* Mobile Hamburger */}
-      <button className="md:hidden text-gray-700">☰</button>
+      <button className="md:hidden text-foreground">☰</button>
     </nav>
   );
 };
