@@ -4,8 +4,10 @@ export type ThemeState = {
   mode: "light" | "dark";
 };
 
+const savedTheme = localStorage.getItem("theme");
+
 const initialState: ThemeState = {
-  mode: "light",
+  mode: savedTheme === "dark" ? "dark" : "light",
 };
 
 const themeSlice = createSlice({

@@ -1,35 +1,39 @@
 @import "tailwindcss";
+
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --primary-color: #2563eb;
-  /* --card-bg: #f3f4f6; */
+  --background: #ffffff;
+  --foreground: #000000;
+  --primary: #2563eb;
+  --card: #f3f4f6;
+  --border: #e5e7eb;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
 }
 
 [data-theme="dark"] {
-  --bg-color: #18181b;
-  --text-color: #f4f4f5;
-  --primary-color: #3b82f6;
-  --card-bg: #27272a;
+  --background: #18181b;
+  --foreground: #f4f4f5;
+  --primary: #3b82f6;
+  --card: #27272a;
+  --border: #3f3f46;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.25s, color 0.25s;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.3s ease-out;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition:
+    background-color 0.25s,
+    color 0.25s;
 }

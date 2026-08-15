@@ -19,6 +19,7 @@ const CodeBlock = ({ code, language = "tsx" }: CodeBlockProps) => {
     <div className="relative">
       <div className="flex items-center justify-between bg-gray-900 text-gray-100 px-4 py-2 rounded-t-md">
         <span className="text-xs font-mono uppercase">{language}</span>
+
         <button
           onClick={copyToClipboard}
           className="flex items-center gap-2 px-2 py-1 text-xs bg-gray-800 hover:bg-gray-700 rounded transition-colors"
@@ -27,8 +28,9 @@ const CodeBlock = ({ code, language = "tsx" }: CodeBlockProps) => {
           {copied ? "Copied!" : "Copy"}
         </button>
       </div>
-      <pre className="bg-gray-50 border border-t-0 border-gray-200 p-4 rounded-b-md overflow-x-auto">
-        <code className="text-sm text-gray-800">{code}</code>
+
+      <pre className="bg-gray-950 border border-t-0 border-gray-800 p-4 rounded-b-md overflow-x-auto">
+        <code className="text-sm text-gray-100">{code}</code>
       </pre>
     </div>
   );
