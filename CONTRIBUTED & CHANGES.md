@@ -50,3 +50,22 @@
     - Added a default `sideOffset` of `4`.
     - Added the existing `fadeIn` animation.
     - Added `TooltipContent.displayName` for easier component identification during development.
+
+- **`Reason`**: Added a separate, optional Tooltip Arrow component so developers can decide whether their tooltip should display an arrow while keeping the Tooltip API composable.
+  - **`Tooltip.tsx`**:
+    - Added `TooltipArrow` as a wrapper around Radix's `TooltipPrimitive.Arrow`.
+    - Added `forwardRef` support and preserved Radix Arrow props.
+    - Added theme-aware `fill-foreground` styling.
+    - Added support for custom `className` through `cn()`.
+    - Exported `TooltipArrow` alongside the other Tooltip components.
+
+- **`Reason`**: Added a dedicated documentation/demo page for the Tooltip component so its usage, positioning options, and API can be demonstrated consistently with the other components in the library.
+  - **`TooltipPage.tsx`**:
+    - Added a basic Tooltip usage example with `TooltipProvider`, `Tooltip`, `TooltipTrigger`, `TooltipContent`, and `TooltipArrow`.
+    - Added examples for `top`, `right`, `bottom`, and `left` tooltip positions.
+    - Added an API Reference section using `PropsTable`.
+    - Added code previews using the existing `ComponentDemo`.
+  - **`AppRouter.tsx`**:
+    - Added the `/components/tooltip` route for the Tooltip documentation page.
+  - **`ComponentLayout.tsx`**:
+    - Existing Tooltip sidebar entry now navigates to the newly added Tooltip page through the new route.

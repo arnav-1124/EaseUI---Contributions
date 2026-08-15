@@ -8,6 +8,7 @@ import ModalPage from "@/pages/components/ModalPage";
 import InputPage from "@/pages/components/InputPage";
 import NavbarPage from "@/pages/components/NavbarPage";
 import TooltipDemo from "@/components/Tooltip/TooltipDemo";
+import TooltipPage from "@/pages/components/TooltipPage";
 
 type Props = {};
 
@@ -44,6 +45,10 @@ const AppRouter = ({}: Props) => {
             {
               path: "navbar",
               element: <NavbarPage />,
+            },
+            {
+              path: "tooltip",
+              element: <TooltipPage/>
             },
             {
               path: "demo",

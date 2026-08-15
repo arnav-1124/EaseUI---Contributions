@@ -2,13 +2,26 @@ import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import * as TooltipPrimitive from "@radix-ui/react-tooltip";
 import { cn } from "@/libs/utils";
-import type { p } from "node_modules/react-router/dist/development/index-react-server-client-B0vnxMMk.d.mts";
 
 const TooltipProvider = TooltipPrimitive.Provider;
 const Tooltip = TooltipPrimitive.Root;
 
 // Trigger
 const TooltipTrigger = TooltipPrimitive.Trigger;
+
+// Arrow
+const TooltipArrow = React.forwardRef<
+  React.ElementRef<typeof TooltipPrimitive.Arrow>,
+  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Arrow>
+>(({ className, ...props }, ref) => {
+  return (
+    <TooltipPrimitive.Arrow
+      ref={ref}
+      className={cn("fill-foreground", className)}
+      {...props}
+    />
+  );
+});
 
 // Content
 const TooltipContent = React.forwardRef<
@@ -30,4 +43,10 @@ const TooltipContent = React.forwardRef<
 
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent };
+export {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipArrow,
+};

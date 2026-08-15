@@ -1,5 +1,11 @@
 import React from "react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./Tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+  TooltipArrow
+} from "./Tooltip";
 
 type Props = {};
 
@@ -9,7 +15,10 @@ const TooltipDemo = (props: Props) => {
       <Tooltip>
         <TooltipTrigger>Hover me</TooltipTrigger>
 
-        <TooltipContent side="left" sideOffset={20}>Hello from EaseUI!</TooltipContent>
+        <TooltipContent side="bottom" sideOffset={20}>
+          Hello from EaseUI!
+          <TooltipArrow />
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );
