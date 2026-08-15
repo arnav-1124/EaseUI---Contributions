@@ -26,3 +26,13 @@
     - Changed the code border from `border-gray-200` to `border-gray-800`.
     - Changed the code text from `text-gray-800` to `text-gray-100`.
     - Kept the code block intentionally dark in both application themes for better readability and consistency with documentation/code-editor conventions.
+
+- **Reason**: The ComponentLayout used hard-coded Tailwind colors, which caused the UI to look incorrect when switching to dark mode. The layout should use the application's semantic theme tokens so colors automatically adapt to the active theme.
+  - **`ComponentLayout.tsx`**:
+    - Removed the hard-coded `text-gray-900` from the main layout container so text can inherit the theme's foreground color.
+    - Replaced `border-gray-200` with `border-border`.
+    - Replaced `hover:text-black` with `hover:text-foreground`.
+    - Replaced the active sidebar item's `text-black` with `text-foreground`.
+    - Replaced the inactive sidebar item's `text-gray-400` with `text-muted-foreground`.
+    - Updated the mobile menu button to use `text-foreground`.
+    - The sidebar now responds correctly to both light and dark themes using the existing theme tokens.
