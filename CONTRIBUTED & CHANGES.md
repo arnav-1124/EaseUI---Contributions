@@ -36,3 +36,17 @@
     - Replaced the inactive sidebar item's `text-gray-400` with `text-muted-foreground`.
     - Updated the mobile menu button to use `text-foreground`.
     - The sidebar now responds correctly to both light and dark themes using the existing theme tokens.
+
+- **`Reason`**: Added the foundation for a reusable Tooltip component using Radix UI while keeping the component composable and developer-friendly.
+  - **`Tooltip.tsx`**:
+    - Installed and integrated `@radix-ui/react-tooltip`.
+    - Added `TooltipProvider` using Radix's `Provider`.
+    - Added `Tooltip` using Radix's `Root`.
+    - Added `TooltipTrigger` using Radix's `Trigger`.
+    - Created a custom `TooltipContent` wrapper using `React.forwardRef`.
+    - Preserved the Radix Tooltip Content props and ref support.
+    - Added theme-aware styling using `bg-foreground` and `text-background`.
+    - Added custom `className` support through `cn()`.
+    - Added a default `sideOffset` of `4`.
+    - Added the existing `fadeIn` animation.
+    - Added `TooltipContent.displayName` for easier component identification during development.
